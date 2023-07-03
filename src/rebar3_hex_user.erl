@@ -211,6 +211,7 @@ handle_task(#{args := #{task := register}} = Task) ->
 
 handle_task(#{args := #{task := auth}} = Task) ->
     #{repo := #{repo_name := RepoName} = Repo, state := State} = Task,
+    erlang:display(Repo),
     Username = get_string_input("Username"),
     Password = get_password(account),
 
